@@ -2,7 +2,13 @@
   export default {
     data() {
       return {
-        img: 'https://miro.medium.com/v2/resize:fit:1400/1*C8xdSMN_IkeXDsTLt6EACA.png'
+        img: '01.png'
+      }
+    },
+
+    methods: {
+      buildImagePath(imageName) {
+        return new URL('../assets/img/' + imageName, import.meta.url).href;
       }
     }
   }
@@ -12,7 +18,7 @@
 <template>
 
   <div class="container">
-    <img :src="this.img" alt="Vue+Vite">
+    <img :src="buildImagePath(img)" alt="Vue+Vite">
   </div>
   
 </template>
